@@ -21,18 +21,3 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
-
-local builtin = require("telescope.builtin")
-vim.keymap.set('n', '<C-p>', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<C-b>', ':Neotree filesystem reveal left<CR>', {})
-
-local config = require("nvim-treesitter.configs")
-config.setup({
-  ensure_installed = {"bash", "css", "csv", "dockerfile", "go", "graphql", "html", "http", "javascript", "json", "lua", "python", "r", "regex", "ruby", "scss","sql", "typescript", "vim", "vimdoc", "vue", "yaml"},
-  highlight = { enabled = true },
-  indent = { enable = true },
-})
-
-require("catppuccin").setup()
-vim.cmd.colorscheme "catppuccin"
