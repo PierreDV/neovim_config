@@ -6,7 +6,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "number"
 vim.g.mapleader = " "
-vim.g.terminal_emulator = 'ghostty'
+-- vim.g.terminal_emulator = 'ghostty'
 
 -- horizontal movement
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
