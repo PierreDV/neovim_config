@@ -1,0 +1,1 @@
+-[ ] handle formatting error messages better, either wrap text or have pop up, look into trouble plugin.
