@@ -9,6 +9,9 @@ return {
             path = 1,
           },
         },
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {},
       },
     })
   end,
