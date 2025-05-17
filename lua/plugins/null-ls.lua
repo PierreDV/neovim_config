@@ -11,23 +11,24 @@ return {
         null_ls.builtins.diagnostics.rubocop,
         null_ls.builtins.formatting.rubocop,
         null_ls.builtins.diagnostics.hadolint,
+        null_ls.builtins.formatting.erb_lint,
       },
-      on_attach = function(client, bufnr)
-        local bufopts = { noremap = true, silent = true, buffer = bufnr }
+      --on_attach = function(client, bufnr)
+      --  local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
-        vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, bufopts)
+      --  vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, bufopts)
 
-        if client.supports_method("textDocument/formatting") then
-          vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-          vim.api.nvim_create_autocmd("BufWritePre", {
-            group = augroup,
-            buffer = bufnr,
-            callback = function()
-              vim.lsp.buf.format({ async = false })
-            end,
-          })
-        end
-      end,
+      --  if client.supports_method("textDocument/formatting") then
+      --    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+      --    vim.api.nvim_create_autocmd("BufWritePre", {
+      --      group = augroup,
+      --      buffer = bufnr,
+      --      callback = function()
+      --        vim.lsp.buf.format({ async = false })
+      --      end,
+      --    })
+      --  end
+      --end,
     })
   end,
 }

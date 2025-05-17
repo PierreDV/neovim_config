@@ -1,1 +1,1 @@
--[ ] handle formatting error messages better, either wrap text or have pop up, look into trouble plugin. -[ ] find easier way to jump to entries in telescope-ui-select -[ ] paste text into telescope -[ ] "i" inclusive -[ ] Don't hide realtive line numbers when linting error on line
+-[ ] find easier way to jump to entries in telescope-ui-select -[ ] paste text into telescope -[ ] "i" inclusive -[ ] Don't hide realtive line numbers when linting error on line
