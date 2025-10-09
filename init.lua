@@ -21,5 +21,18 @@ require("lazy").setup({
     { import = "plugins" },
   },
   install = { colorscheme = { "habamax" } },
-  checker = { enabled = true },
+  checker = { 
+    enabled = true,
+    notify = false,  -- Silent checking
+  },
+})
+
+-- Auto-update plugins on startup (after a short delay)
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    -- Wait 100ms after startup to not slow down initial load
+    vim.defer_fn(function()
+      require("lazy").update({ show = false, wait = false })
+    end, 100)
+  end,
 })
