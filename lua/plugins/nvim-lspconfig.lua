@@ -16,6 +16,7 @@ return {
     vim.lsp.enable("lua_ls")
     vim.lsp.enable("ts_ls")
     vim.lsp.enable("ruby_lsp")
+    vim.lsp.enable('biome')
 
     -- Keymaps
     vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
@@ -29,6 +30,12 @@ return {
       group = vim.api.nvim_create_augroup('my.lsp', {}),
       callback = function(args)
         local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+
+        -- Disable ts_ls formatting in favor of Biome
+        if client.name == "ts_ls" then
+          client.server_capabilities.documentFormattingProvider = false
+          client.server_capabilities.documentRangeFormattingProvider = false
+        end
 
         -- Auto-format on save
         if not client:supports_method('textDocument/willSaveWaitUntil')
