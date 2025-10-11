@@ -5,6 +5,6 @@ return {
     "neovim/nvim-lspconfig"
   },
   opts = {
-    ensure_installed = { "lua_ls", "ts_ls", "ruby_lsp" }
+    ensure_installed = { "biome", "lua_ls", "ts_ls", "ruby_lsp" }
   },
 }
