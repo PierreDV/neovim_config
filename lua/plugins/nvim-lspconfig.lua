@@ -31,12 +31,6 @@ return {
       callback = function(args)
         local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
 
-        -- Disable ts_ls formatting in favor of Biome
-        if client.name == "ts_ls" then
-          client.server_capabilities.documentFormattingProvider = false
-          client.server_capabilities.documentRangeFormattingProvider = false
-        end
-
         -- Auto-format on save
         if not client:supports_method('textDocument/willSaveWaitUntil')
             and client:supports_method('textDocument/formatting') then
