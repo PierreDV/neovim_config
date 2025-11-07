@@ -16,14 +16,15 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("vim-options")
+require("lsp")
 require("lazy").setup({
   spec = {
     { import = "plugins" },
   },
   install = { colorscheme = { "habamax" } },
-  checker = { 
+  checker = {
     enabled = true,
-    notify = false,  -- Silent checking
+    notify = false, -- Silent checking
   },
 })
 
