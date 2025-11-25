@@ -10,6 +10,11 @@ return {
 		vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 
 		require("telescope").setup({
+			defaults = {
+				file_ignore_patterns = {
+					"node_modules",
+				},
+			},
 			pickers = {
 				buffers = { initial_mode = "normal" },
 			},
