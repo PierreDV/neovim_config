@@ -16,6 +16,7 @@ return {
 			json = { "prettierd" },
 			yaml = { "prettierd" },
 			markdown = { "prettierd" },
+			ruby = { "syntax_tree" },
 		},
 		-- Set default options
 		default_format_opts = {

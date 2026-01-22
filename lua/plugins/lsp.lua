@@ -7,7 +7,6 @@ return {
 			"cssls",
 			"tailwindcss",
 			"lua_ls",
-			"ruby_lsp",
 			"ts_ls",
 		},
 	},
@@ -17,5 +16,12 @@ return {
 			opts = {},
 		},
 		"neovim/nvim-lspconfig",
+		opts = {
+			servers = {
+				ruby_lsp = {
+					cmd = { os.getenv("HOME") .. "/.rbenv/shims/ruby-lsp" },
+				},
+			},
+		},
 	},
 }

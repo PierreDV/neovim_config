@@ -57,3 +57,12 @@ vim.diagnostic.config({
 		},
 	},
 })
+
+-- Setup up ruby_lsp without Mason so it uses project specific version of ruby instead.
+vim.lsp.config["ruby_lsp"] = {
+	cmd = { vim.fn.exepath("ruby-lsp") },
+	filetypes = { "ruby", "eruby" },
+	root_markers = { "Gemfile", ".ruby-version", ".git" },
+}
+
+vim.lsp.enable("ruby_lsp")
