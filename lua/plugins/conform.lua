@@ -9,13 +9,13 @@ return {
 		-- Define your formatters
 		formatters_by_ft = {
 			lua = { "stylua" },
-			javascript = { "prettierd" },
-			typescript = { "prettierd" },
-			css = { "prettierd" },
-			html = { "prettierd" },
-			json = { "prettierd" },
-			yaml = { "prettierd" },
-			markdown = { "prettierd" },
+			javascript = { "prettier" },
+			typescript = { "prettier" },
+			css = { "prettier" },
+			html = { "prettier" },
+			json = { "prettier" },
+			yaml = { "prettier" },
+			markdown = { "prettier" },
 			ruby = { "syntax_tree" },
 		},
 		-- Set default options
