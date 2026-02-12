@@ -4,7 +4,7 @@ vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.signcolumn = "number"
+vim.opt.signcolumn = "yes"
 vim.g.mapleader = " "
 vim.api.nvim_set_option("clipboard", "unnamed")
 -- Statusline: [Mode] [Relative Path] [Modified Flag] [Right Aligned: Line/Col]
