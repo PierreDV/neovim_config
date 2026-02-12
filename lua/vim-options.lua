@@ -7,7 +7,8 @@ vim.opt.relativenumber = true
 vim.opt.signcolumn = "number"
 vim.g.mapleader = " "
 vim.api.nvim_set_option("clipboard", "unnamed")
-
+-- Statusline: [Mode] [Relative Path] [Modified Flag] [Right Aligned: Line/Col]
+vim.opt.statusline = "%#PmenuSel# %{toupper(mode())} %#StatusLine# %f %m %= %l:%c "
 -- horizontal movement
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
