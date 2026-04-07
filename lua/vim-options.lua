@@ -6,7 +6,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes"
 vim.g.mapleader = " "
-vim.api.nvim_set_option("clipboard", "unnamed")
+vim.api.nvim_set_option("clipboard", "unnamedplus")
 
 -- horizontal movement
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
