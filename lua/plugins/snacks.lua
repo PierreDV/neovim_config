@@ -16,28 +16,24 @@ return {
       function()
         require("snacks").gitbrowse()
       end,
-      desc = "Open file in browser",
     },
     {
       "<leader>ff",
       function()
         require("snacks").picker.files({ hidden = true })
       end,
-      desc = "Find Files"
     },
     {
       "<leader>fg",
       function()
         require("snacks").picker.grep()
       end,
-      desc = "Live Grep"
     },
     {
       "<leader>fb",
       function()
         require("snacks").picker.buffers()
       end,
-      desc = "Find Buffers"
     },
   },
 }

@@ -2,7 +2,6 @@ return {
   "lewis6991/gitsigns.nvim",
   event = { "BufReadPre", "BufNewFile" },
   opts = {
-    -- Inline Blame Configuration
     current_line_blame = true,
     signcolumn = false,
     current_line_blame_opts = {
