@@ -7,16 +7,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
     local opts = { buffer = ev.buf, silent = true }
     -- set keybinds
     opts.desc = "Show LSP references"
-    keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts)
+    keymap.set("n", "gR", function() require("snacks").picker.lsp_references() end, opts)
 
     opts.desc = "Show LSP definition"
     keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 
     opts.desc = "Show LSP implementations"
-    keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)
+    keymap.set("n", "gi", function() require("snacks").picker.lsp_implementations() end, opts)
 
     opts.desc = "Show LSP type definitions"
-    keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts)
+    keymap.set("n", "gt", function() require("snacks").picker.lsp_type_definitions() end, opts)
 
     opts.desc = "See available code actions"
     keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
