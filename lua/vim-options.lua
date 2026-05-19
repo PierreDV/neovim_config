@@ -12,3 +12,5 @@ vim.opt.cursorline = true
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.opt.fillchars = { eob = " " }
+vim.opt.statuscolumn = " %s%=%l %#Normal# %*"
