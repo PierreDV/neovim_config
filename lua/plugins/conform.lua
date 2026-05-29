@@ -15,11 +15,11 @@ return {
       json = { "prettier" },
       yaml = { "prettier" },
       markdown = { "prettier" },
-      ruby = { "syntax_tree" },
+      ruby = { "standardrb" },
     },
     default_format_opts = {
       lsp_format = "fallback",
     },
-    format_on_save = { timeout_ms = 1000 },
+    format_on_save = { timeout_ms = 8000 },
   },
 }

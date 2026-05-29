@@ -55,10 +55,29 @@ vim.diagnostic.config({
   },
 })
 
-vim.lsp.config["ruby_lsp"] = {
-  cmd = { "ruby-lsp" },
-  filetypes = { "ruby", "eruby" },
-  root_markers = { "Gemfile", ".ruby-version", ".git" },
-}
+--vim.lsp.config["ruby_lsp"] = {
+--  cmd = { "ruby-lsp" },
+--  filetypes = { "ruby", "eruby" },
+--  root_markers = { "Gemfile", ".ruby-version", ".git" },
+--}
+--
+--vim.lsp.enable("ruby_lsp")
+local function executable(cmd)
+  return vim.fn.executable(cmd) == 1
+end
 
-vim.lsp.enable("ruby_lsp")
+if executable("ruby-lsp") then
+  vim.lsp.config.ruby_lsp = {
+    cmd = { "ruby-lsp" },
+    filetypes = { "ruby", "eruby" },
+    root_markers = { "Gemfile", ".ruby-version", ".git" },
+  }
+  vim.lsp.enable("ruby_lsp")
+elseif executable("solargraph") then
+  vim.lsp.config.solargraph = {
+    cmd = { "solargraph", "stdio" },
+    filetypes = { "ruby" },
+    root_markers = { "Gemfile", ".ruby-version", ".git" },
+  }
+  vim.lsp.enable("solargraph")
+end
