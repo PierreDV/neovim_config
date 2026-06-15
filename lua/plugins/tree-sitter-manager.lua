@@ -3,7 +3,7 @@ return {
   dependencies = {},
   config = function()
     require("tree-sitter-manager").setup({
-      ensure_installed = { "regex" },
+      ensure_installed = { "regex", "rbs" },
       auto_install = true,
     })
   end

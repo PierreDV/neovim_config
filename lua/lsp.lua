@@ -22,7 +22,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
     keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
     opts.desc = "Show buffer diagnostics"
-    keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
+    keymap.set("n", "<leader>D", function() require("snacks").picker.diagnostics_buffer() end, opts)
+
+    opts.desc = "Show project diagnostics"
+    keymap.set("n", "<leader>fd", function() require("snacks").picker.diagnostics() end, opts)
 
     opts.desc = "Show line diagnostics"
     keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
@@ -54,11 +57,3 @@ vim.diagnostic.config({
     },
   },
 })
-
-vim.lsp.config["ruby_lsp"] = {
-  cmd = { "ruby-lsp" },
-  filetypes = { "ruby", "eruby" },
-  root_markers = { "Gemfile", ".ruby-version", ".git" },
-}
-
-vim.lsp.enable("ruby_lsp")
