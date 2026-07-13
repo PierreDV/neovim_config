@@ -16,6 +16,7 @@ return {
       yaml = { "prettier" },
       markdown = { "prettier" },
       ruby = { "standardrb" },
+      rust = { "rustfmt" },
     },
     default_format_opts = {
       lsp_format = "fallback",
